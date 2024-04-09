@@ -11,6 +11,7 @@ Rf = float((soup.find(lambda tag: tag.name == 'span' and tag.get('class') == ['Q
 
 ERm = 10.0
 
+# Plan on web scraping data to regress beta automatically 
 b = 1.0
 
 ER = Rf + b*(ERm - Rf)
