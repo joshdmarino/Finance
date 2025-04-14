@@ -9,8 +9,8 @@ import matplotlib.pyplot as plt
 # ------------------------------
 # Set Date Range for Historical Data
 # ------------------------------
-start_date = "2023-01-01"
-end_date   = "2023-12-31"
+start_date = "2024-01-01"
+end_date   = "2024-12-31"
 
 # ------------------------------
 # Step 1: Price Puts using Black-Scholes for Each Stock
@@ -144,8 +144,8 @@ for ticker in tickers:
     sim_prices = simulated_future_prices[ticker]
     portfolio_losses += np.maximum(K - sim_prices, 0)
     
-compounded_total_premium = (1 + r)**T * sum(put_prices[ticker] for ticker in tickers)
-portfolio_losses = portfolio_losses - compounded_total_premium
+#compounded_total_premium = (1 + r)**T * sum(put_prices[ticker] for ticker in tickers)
+portfolio_losses = portfolio_losses 
 portfolio_VaR = np.quantile(portfolio_losses, 0.95)
 
 print("\n----- Portfolio Loss Distribution -----")
